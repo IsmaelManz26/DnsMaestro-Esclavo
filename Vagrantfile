@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
       venus.vm.network "private_network", ip: "192.168.57.102"
       venus.vm.provider "virtualbox" do |vb|
         vb.memory = "512"
+      end
       venus.vm.provision "shell", inline: <<-SHELL
         apt-get update
         apt-get install -y bind9 dnsutils
@@ -21,12 +22,13 @@ Vagrant.configure("2") do |config|
       tierra.vm.network "private_network", ip: "192.168.57.103"
       tierra.vm.provider "virtualbox" do |vb|
         vb.memory = "512"
+      end
       tierra.vm.provision "shell", inline: <<-SHELL
         apt-get update
         apt-get install -y bind9 dnsutils
         SHELL
       end
     end
-    
+
   end
 end
