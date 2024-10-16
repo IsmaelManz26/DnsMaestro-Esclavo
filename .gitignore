@@ -1,0 +1,6 @@
+# Ignorar el directorio .vagrant
+.vagrant/
+
+# Ignorar ficheros de backup (suelen terminar con ~ o .bak)
+*~
+*.bak
