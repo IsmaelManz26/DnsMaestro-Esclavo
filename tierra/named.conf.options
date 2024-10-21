@@ -1,0 +1,25 @@
+acl "internal" {
+    127.0.0.0/8;       # Permitir consultas desde localhost
+    192.168.57.0/24;   # Permitir consultas desde la red interna
+};
+
+options {
+    directory "/var/cache/bind";
+
+    // Escuchar solo en la red IPv4
+    listen-on { 192.168.57.103; };  # IP del maestro (tierra)
+    listen-on-v6 { none; };         # Desactivar IPv6 completamente
+
+    // Permitir consultas recursivas solo desde las redes definidas en la acl
+    allow-query { "internal"; };
+    recursion yes;
+
+    // Validación DNSSEC activada
+    dnssec-validation yes;
+
+    // NXDOMAIN no autoritativo
+    auth-nxdomain no;
+
+    // Otras opciones predeterminadas
+    forwarders { };   # Vacío si no tienes reenviadores
+};
