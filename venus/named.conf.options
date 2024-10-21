@@ -22,4 +22,7 @@ options {
 
     // Otras opciones predeterminadas
     forwarders { };   # Vacío si no tienes reenviadores
+
+    // Cache negativa 7200s (2 horas)
+    max-ncache-ttl 7200;
 };
