@@ -21,5 +21,6 @@ options {
     auth-nxdomain no;
 
     // Otras opciones predeterminadas
-    forwarders { };   # Vacío si no tienes reenviadores
+    forwarders { 208.67.222.222; };   # OpenDNS
+    forward only;   # Reenvía solo a los servidores especificados
 };
