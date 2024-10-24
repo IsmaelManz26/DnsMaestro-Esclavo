@@ -32,6 +32,6 @@ Vagrant.configure("2") do |config|
         SHELL
       end
 
-    # Maquinaria imaginaria marte 192.168.57.184
+    # Maquinaria imaginaria marte 192.168.57.104
 
 end
